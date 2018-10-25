@@ -1,0 +1,49 @@
+.menu {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.menu-item {
+  width: 15%;
+  height: 300px;
+  display: inline-block;
+  transition: all 0.6s;
+}
+
+.menu-item:hover {
+  width: 30%;
+  transition: all 0.6s;
+}
+
+.btn-sobre{
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 15px 0 0 15px;
+}
+
+.btn-questionario{
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.btn-estresse{
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
+.btn-ansiedade{
+  background-color: rgba(255, 255, 0, 0.5);
+}
+
+.btn-depressao{
+  background-color: rgba(255, 0, 255, 0.5);
+}
+
+.btn-sobre:hover ~ .menu {
+  background-color: red ;
+}
