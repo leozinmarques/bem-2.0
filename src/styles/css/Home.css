@@ -7,19 +7,18 @@
 
 .middle {
   display: table-cell;
-  width: 100%;
   vertical-align: middle;
 }
 
 .menu-item {
-  width: 15%;
-  height: 300px;
+  width: 10%;
+  height: 400px;
   display: inline-block;
   transition: all 0.6s;
 }
 
 .menu-item:hover {
-  width: 30%;
+  width: 25%;
   transition: all 0.6s;
 }
 
@@ -44,6 +43,6 @@
   background-color: rgba(255, 0, 255, 0.5);
 }
 
-.btn-sobre:hover ~ .menu {
-  background-color: red ;
+.btn-login{
+  background-color: rgba(0, 0, 0, 0.5);
 }

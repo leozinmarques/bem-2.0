@@ -1,27 +1,41 @@
 import React, {Component} from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
 import '../../styles/css/Home.css';
 import $ from 'jquery';
 
 export default class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+        parentHover: false, color: "rgba(255,0,0,0.2)", transition: "all 0.4s"
+    }
+
+    this.mouseOver = event => {
+      console.log(event);
+      this.setState({
+        parentHover: true
+      });
+    }
+
+    this.mouseOut = event => {
+      this.setState({
+        parentHover: false
+      });
+    }
+  }
 
   render(){
     return(
-      <Grid fluid className="menu">
-        <Row className="middle">
-          <Col className="menu-item btn-sobre"></Col>
-          <Col className="menu-item btn-questionario"></Col>
-          <Col className="menu-item btn-estresse"></Col>
-          <Col className="menu-item btn-depressao"></Col>
-          <Col className="menu-item btn-ansiedade"></Col>
-        </Row>
-      </Grid>
+      <div className="menu" style={this.state.parentHover ? {"backgroundColor": this.state.color, "transition": this.state.transition} : {"transition": this.state.transition}}>
+        <div className="middle">
+          <div className="menu-item btn-sobre" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}></div>
+          <div className="menu-item btn-questionario" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}></div>
+          <div className="menu-item btn-estresse" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}></div>
+          <div className="menu-item btn-depressao" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}></div>
+          <div className="menu-item btn-ansiedade" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}></div>
+          <div className="menu-item btn-login" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}></div>
+        </div>
+      </div>
     );
 
-    $(document).ready(function() {
-      $("btn-sobre").hover(function() {
-        $("menu").css("background-color", "red");
-      });
-    });
   }
 }
